@@ -5,6 +5,6 @@ module.exports = (db) => {
   router.get("/", (req, res) => {
     res.render("my_turntable");
   });
-  console.log(router);
+  /* console.log(router); */
   return router;
 };
