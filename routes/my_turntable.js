@@ -4,7 +4,7 @@ const router = express.Router();
 module.exports = (db) => {
   router.get("/", (req, res) => {
     const myListing = `
-    SELECT title, artist_name, price, description,listing_views, record_images.img_url
+    SELECT title, artist_name, price, description,sold,listing_views, record_images.img_url
     FROM records
     JOIN record_images ON records.id = record_id
     JOIN users ON seller_id = users.id
