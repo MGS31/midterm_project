@@ -19,12 +19,13 @@
       <% } %>
     </section>
     <section class="comments">
-      <% for(let comment of comments) { %>
+      <form action="/myturntable" method="POST">
+        <label for="newComment">New Comment</label>
+        <input type="text" name="newComment" value="" />
+        <button type="submit">Post</button>
+      </form>
       <h2>Comments (3)</h2>
-      <label for="newComment">New Comment</label>
-      <form action="input"></form>
-      <input type="text" />
-      <button>Post</button>
+      <% for(let comment of comments) { %>
       <div class="userComment">
         <img src="" alt="" />
         <h3><%= comment.username %></h3>
