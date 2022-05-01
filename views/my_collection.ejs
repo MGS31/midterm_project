@@ -12,6 +12,7 @@
       integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
       crossorigin="anonymous"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   </head>
   <body class="">
     <h1 id="myCollection">My Collection</h1>
@@ -42,7 +43,7 @@
         <p>Price: <%= record.price %></p>
         <p>Views: <%= record.listing_views %></p>
         <button>Delete</button>
-        <button>Sold</button>
+        <button class="soldButton">Sold</button>
       </div>
       <% } %>
     </section>
@@ -50,5 +51,12 @@
       <a href="#">Contact Us</a>
       <a href="#">Terms Of Use</a>
     </footer>
+    <script>
+      $(document).ready(function () {
+        $(".soldButton").on("click", function () {
+          $(this).toggleClass("sold");
+        });
+      });
+    </script>
   </body>
 </html>
