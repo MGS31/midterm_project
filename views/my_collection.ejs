@@ -4,29 +4,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Collection</title>
+    <link rel="stylesheet" href="../styles/my_collection.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
   </head>
-  <body>
-    <h1>My Collection</h1>
-    <section class="favourties">
-      <h2>Favourites (18)</h2>
-      <div class="tile">
-        <img />
-        <h3>Record title</h3>
-        <p>Artist</p>
-        <p>Price</p>
-        <p>Views 100</p>
-        <button>Sold</button>
-        <button>*</button>
+  <body class="bg-light">
+    <h1 id="myCollection">My Collection</h1>
+    <section class="favourties container-sm">
+      <% for(let count of countListings) { %>
+      <h2>Favourites (<%= count.count %>)</h2>
+      <% } %> <% for(let favourite of favourites) { %>
+      <div class="tile card">
+        <img src="<%= favourite.img_url %>" alt="" />
+        <h3>Record title: <%= favourite.title %></h3>
+        <p>Artist: <%= favourite.artist_name %></p>
+        <p>Price: <%= favourite.price %></p>
+        <p>Views: <%= favourite.listing_views %></p>
+        <% } %>
+        <button class="sold btn btn-primary">Sold</button>
+        <button class="favourite btn btn-secondary">*</button>
       </div>
     </section>
     <section class="myListings">
-      <h2>My Listings (73)</h2>
+      <% for(let count of countListings) { %>
+      <h2>My Listings (<%= count.count %>)</h2>
+      <% } %>
       <div class="tile">
-        <img />
-        <h3>Record title</h3>
-        <p>Artist</p>
-        <p>Price</p>
-        <p>Views 100</p>
+        <% for(let record of records) { %>
+        <img src="<%= record.img_url %>" alt="" />
+        <h3>Record title: <%= record.title %></h3>
+        <p>Artist: <%= record.artist_name %></p>
+        <p>Price: <%= record.price %></p>
+        <p>Views: <%= record.listing_views %></p>
+        <% } %>
         <button>Available</button>
         <button>Delete</button>
         <button>Sold</button>
