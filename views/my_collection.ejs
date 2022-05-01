@@ -53,8 +53,11 @@
     </footer>
     <script>
       $(document).ready(function () {
-        $(".soldButton").on("click", function () {
+        $(".favourite").on("click", function () {
           $(this).toggleClass("sold");
+        });
+        $(".favourite").on("click", function () {
+          $(this).toggleClass("favourited");
         });
       });
     </script>
