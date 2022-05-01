@@ -13,22 +13,22 @@
       crossorigin="anonymous"
     />
   </head>
-  <body class="bg-light">
+  <body class="">
     <h1 id="myCollection">My Collection</h1>
-    <section class="favourties container-sm">
+    <section class="favourties">
       <% for(let count of countListings) { %>
       <h2>Favourites (<%= count.count %>)</h2>
       <% } %> <% for(let favourite of favourites) { %>
-      <div class="tile card">
+      <div class="tile">
         <img src="<%= favourite.img_url %>" alt="" />
         <h3>Record title: <%= favourite.title %></h3>
         <p>Artist: <%= favourite.artist_name %></p>
         <p>Price: <%= favourite.price %></p>
         <p>Views: <%= favourite.listing_views %></p>
-        <% } %>
-        <button class="sold btn btn-primary">Sold</button>
-        <button class="favourite btn btn-secondary">*</button>
+        <p><%=favourite.sold%></p>
+        <button class="favourite">*</button>
       </div>
+      <% } %>
     </section>
     <section class="myListings">
       <% for(let count of countListings) { %>
@@ -41,11 +41,10 @@
         <p>Artist: <%= record.artist_name %></p>
         <p>Price: <%= record.price %></p>
         <p>Views: <%= record.listing_views %></p>
-        <% } %>
-        <button>Available</button>
         <button>Delete</button>
         <button>Sold</button>
       </div>
+      <% } %>
     </section>
     <footer>
       <a href="#">Contact Us</a>
