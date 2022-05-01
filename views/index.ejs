@@ -12,51 +12,26 @@
 </head>
 
 <body>
-  <h1>Record of the day!</h1>
-  <h3>Artist Name</h3>
-  <h5>Price</h5>
-  <dt><img src="..." class="rounded" alt="..."></dt>
+  <% for(const record of records) { %>
+  <h1><%= record.title %></h1>
+  <h3><%= record.artist %></h3>
+  <h5><%= record.price %></h5>
+  <dt><img src="<%= record.img_url %>" class="rounded" alt="..."></dt>
   <i class="fa-solid fa-square-star"></i>
-  <dd class="text">Description for record will be placed in this text area</dd>
+  <dd class="text"><%= record.description %></dd>
+  <% } %>
   <h3>Favourites</h3>
   <div class="container">
+    <% for (let favourite of favourites) { %>
     <div class="row">
-      <h5>Record Name</h5>
       <div class="col">
-        <img src="..." class="img-thumbnail" alt="...">
+        <img src="<%= favourite.img_url %>" class="img-thumbnail" alt="...">
         <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <h6><%= favourite.title %></h6>
+          <h6><%= favourite.price %></h6>
         </div>
       </div>
-      <h5>Record Name</h5>
-      <div class="col">
-        <img src="..." class="img-thumbnail" alt="...">
-        <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-      <h5>Record Name</h5>
-      <div class="col">
-        <img src="..." class="img-thumbnail" alt="...">
-        <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-      <h5>Record Name</h5>
-      <div class="col">
-        <img src="..." class="img-thumbnail" alt="...">
-        <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-      <h5>Record Name</h5>
-      <div class="col">
-        <img src="..." class="img-thumbnail" alt="...">
-        <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-    </div>
+    <% } %>
   </div>
 </body>
 
