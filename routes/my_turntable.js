@@ -8,7 +8,7 @@ module.exports = (db) => {
     FROM records
     JOIN record_images ON records.id = record_id
     JOIN users ON seller_id = users.id
-    WHERE username = 'raas1' LIMIT 1`;
+    WHERE record_id = 3 LIMIT 1`;
     db.query(myListing, (error, results) => {
       if (error) {
         throw error;
@@ -17,7 +17,7 @@ module.exports = (db) => {
       SELECT comments.description, users.username
       FROM comments
       JOIN users on user_id = users.id
-      WHERE username = 'raas1'`;
+      WHERE record_id = 3`;
       db.query(recordComments, (error, results2) => {
         if (error) {
           throw error;
@@ -27,6 +27,16 @@ module.exports = (db) => {
           comments: results2.rows,
         });
       });
+    });
+  });
+  router.post("/", (req, res) => {
+    let userComment = req.body["newComment"];
+    let commentValues = [2, 6, userComment];
+    let newComment = `
+    INSERT INTO comments (record_id,user_id, description) VALUES ($1 ,$2 ,$3)`;
+    db.query(newComment, commentValues);
+    res.redirect("/myturntable").catch((err) => {
+      console.log(err.message);
     });
   });
   return router;
