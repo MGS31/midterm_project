@@ -9,7 +9,7 @@
     <section class="record">
       <% for(let record of records) { %>
       <h1>Record title: <%= record.title %></h1>
-      <button>Available</button>
+      <p><%= record.sold %></p>
       <h2><%= record.artist_name %></h2>
       <button>*</button>
       <h3>Price: <%= record.price %></h3>
