@@ -3,37 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Collection</title>
+    <title>My Turntable</title>
   </head>
   <body>
     <section class="record">
-      <h1>Record Title</h1>
+      <% for(let record of records) { %>
+      <h1>Record title: <%= record.title %></h1>
       <button>Available</button>
-      <h2>Artist Name</h2>
+      <h2><%= record.artist_name %></h2>
       <button>*</button>
-      <h3>Price</h3>
-      <img src="" alt="" />
-      <img src="" alt="" />
-      <img src="" alt="" />
-      <img src="" alt="" />
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, natus.
-        Corporis, eos! Accusamus molestiae, consequuntur veritatis illum nostrum
-        quos maxime aspernatur error nulla inventore accusantium, porro nesciunt
-        impedit rerum ipsum!
-      </p>
-      <p>Views 100</p>
+      <h3>Price: <%= record.price %></h3>
+      <img src="<%= record.img_url %>" alt="" />
+      <p>Description: <%= record.description %></p>
+      <p>Views: <%= record.listing_views %></p>
+      <% } %>
     </section>
     <section class="comments">
+      <% for(let comment of comments) { %>
       <h2>Comments (3)</h2>
       <label for="newComment">New Comment</label>
       <form action="input"></form>
+      <input type="text" />
       <button>Post</button>
       <div class="userComment">
         <img src="" alt="" />
-        <h3>Username</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <h3><%= comment.username %></h3>
+        <p><%= comment.description %></p>
       </div>
+      <% } %>
     </section>
     <footer>
       <a href="#">Contact Us</a>
