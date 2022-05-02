@@ -25,7 +25,8 @@ module.exports = (db) => {
       JOIN record_images ON record_id = records.id
       JOIN favourite_records ON favourite_records.record_id = records.id
       JOIN users ON user_id = users.id
-      WHERE users.id = ${user};`
+      WHERE users.id = ${user}
+      LIMIT 4;`
       db.query(sql2, (error,results2) => {
         if(error) {
           throw error;
