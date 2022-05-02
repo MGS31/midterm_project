@@ -4,8 +4,11 @@
 <head>
   <title>Home Page</title>
   <!-- CSS External links -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <!-- CSS Internal Links -->
   <link rel="stylesheet" href="/styles/home_page.css" type="text/css" />
   <!-- Javascript page links -->
@@ -15,49 +18,65 @@
 <header>
 
 </header>
+
 <body>
+  <section class="page">
   <div class="body-box">
-  <% for(const record of records) { %>
-    <div class="record-home">
-      <h1 class="title-record_day"><%= record.title %></h1>
-      <div class="record-of-day">
-      <div class="name_price">
-      <h5 class="artist"><%= record.artist_name %></h5>
-      <h5 class="price-record_day">$<%= record.price %>.00</h5>
-    </div>
-      <div class="all-but-title">
-      <img src="<%= record.img_url %>" class="record_main" alt="...">
-    <div class="record-detail">
-    <div class="record-dis">
-      <p class="desc-text"><%= record.description %></p>
+    <% for(const record of records) { %>
+      <div class="record-home">
+        <h1 class="title-record_day">
+          <%= record.title %>
+        </h1>
+        <div class="record-of-day">
+          <div class="name_price">
+            <h5 class="artist">
+              <%= record.artist_name %>
+            </h5>
+            <h5 class="price-record_day">$<%= record.price %>.00</h5>
+          </div>
+          <div class="all-but-title">
+            <img src="<%= record.img_url %>" class="record_main" alt="...">
+            <div class="record-detail">
+              <div class="record-dis">
+                <p class="desc-text">
+                  <%= record.description %>
+                </p>
+              </div>
+              <div class="record-listing">
+                <p class="views">Views: <%= record.listing_views %>
+                </p>
+                <p class="availability">
+                  <%= record.sol %>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% } %>
   </div>
-  <div class="record-listing">
-    <p class="availability"><%= record.sol %></p>
-    <p class="views">Views: <%= record.listing_views %></p>
-  </div>
-</div>
-</div>
-</div>
-</div>
-  <% } %>
   <div class="favourites">
-    <h3 class="fav-name">Favourites</h3>
+    <h3 class="fav-name">Your Favourites</h3>
     <div class="container">
       <% for (let favourite of favourites) { %>
         <div class="row">
-            <img src="<%= favourite.img_url %>" class="favourite_img" alt="...">
-            <div class="card-body">
-              <h6><%= favourite.title %></h6>
-              <h6>$<%= favourite.price %>.00</h6>
-            </div>
+          <img src="<%= favourite.img_url %>" class="favourite_img" alt="...">
+          <div class="card-body">
+            <h6>
+              <%= favourite.title %>
+            </h6>
+            <h6>$<%= favourite.price %>.00</h6>
+          </div>
           <% } %>
         </div>
-      </div>
     </div>
   </div>
-  </body>
   <footer class="footer">
     <a href="#">Contact Us</a>
     <a href="#">Terms Of Use</a>
   </footer>
+</section>
+
+</body>
+
 </html>
