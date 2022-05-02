@@ -1,0 +1,82 @@
+body {
+  background-color: lightgray;
+}
+
+#myCollection {
+}
+
+main {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 5px dashed maroon;
+}
+
+section .favourites,
+section .myListings {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.Favouritestile,
+.Listingtile {
+  display: flex;
+  border: 2px solid black;
+  height: 25%;
+  margin-bottom: 2em;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.recordInfo {
+  display: flex;
+  flex-direction: column;
+  padding: 2.5em;
+  width: 100%;
+}
+
+.recordInfo h3,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+  padding-left: 1em;
+}
+
+.tile button {
+  width: 3%;
+}
+
+.tile {
+  display: flex;
+  flex-direction: column;
+}
+
+button .sold {
+  width: 25%;
+}
+
+.sold {
+  background-color: red;
+}
+
+.favourited {
+  background-color: orange;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1em;
+}
