@@ -1,0 +1,38 @@
+header {
+  margin: 50px;
+    display: flex;
+}
+
+footer {
+  margin: 50px 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.sell {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  background-color: lightgrey;
+}
+
+.head {
+  padding-left:440px;
+  font-weight: bold;
+}
+
+.form-control {
+  width: 550px;
+}
+
+.btn {
+  margin-left: 5px;
+  margin-top: 10px;
+}
+
+.btn-primary {
+  width: 540px;
+}
