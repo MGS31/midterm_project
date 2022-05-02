@@ -42,6 +42,11 @@ const myCollectionAPIRoutes = require("./routes/api/my_collection");
 const myTurntableRoutes = require("./routes/my_turntable");
 const myTurntableAPIRoutes = require("./routes/api/my_turntable");
 
+// *** for ADVANCED SEARCH feature ***
+const advancedSearch = require("./routes/advanced_search"); // to render advanced search page
+const advancedSearchAPI = require("./routes/api/records_search"); // end point for advanced search API (to handle get request)
+// *** for ADVANCED SEARCH feature ***
+
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
@@ -49,9 +54,17 @@ app.use("/api/widgets", widgetsRoutes(db));
 app.use("/api/mycollection", myCollectionAPIRoutes(db));
 app.use("/api/myturntable", myTurntableAPIRoutes(db));
 
+// *** for ADVANCED SEARCH feature ***
+app.use("/api/records/search", advancedSearchAPI(db));
+// *** for ADVANCED SEARCH feature ***
+
 //Non API routes
 app.use("/mycollection", myCollectionRoutes(db));
 app.use("/myturntable", myTurntableRoutes(db));
+
+// *** for ADVANCED SEARCH feature ***
+app.use("/advanced_search", advancedSearch(db));
+// *** for ADVANCED SEARCH feature ***
 
 // Note: mount other resources here, using the same pattern above
 
