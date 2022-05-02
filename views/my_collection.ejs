@@ -6,54 +6,63 @@
     <title>My Collection</title>
     <link rel="stylesheet" href="../styles/my_collection.css" />
     <!-- Bootstrap CSS -->
-    <link
+    <!-- <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
       integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
       crossorigin="anonymous"
-    />
+    /> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   </head>
   <body class="">
     <h1 id="myCollection">My Collection</h1>
-    <section class="favourties">
-      <% for(let count of countListings) { %>
-      <h2>Favourites (<%= count.count %>)</h2>
-      <% } %> <% for(let favourite of favourites) { %>
-      <div class="tile">
-        <img src="<%= favourite.img_url %>" alt="" />
-        <h3>Record title: <%= favourite.title %></h3>
-        <p>Artist: <%= favourite.artist_name %></p>
-        <p>Price: <%= favourite.price %></p>
-        <p>Views: <%= favourite.listing_views %></p>
-        <button><%=favourite.sold%></button>
-        <button class="favourite">*</button>
-      </div>
-      <% } %>
-    </section>
-    <section class="myListings">
-      <% for(let count of countListings) { %>
-      <h2>My Listings (<%= count.count %>)</h2>
-      <% } %>
-      <div class="tile">
-        <% for(let record of records) { %>
-        <img src="<%= record.img_url %>" alt="" />
-        <h3>Record title: <%= record.title %></h3>
-        <p>Artist: <%= record.artist_name %></p>
-        <p>Price: <%= record.price %></p>
-        <p>Views: <%= record.listing_views %></p>
-        <button>Delete</button>
-        <button class="soldButton">Sold</button>
-      </div>
-      <% } %>
-    </section>
+    <main>
+      <section class="favourties">
+        <% for(let count of countListings) { %>
+        <h2>Favourites (<%= count.count %>)</h2>
+        <% } %> <% for(let favourite of favourites) { %>
+        <div class="Favouritestile">
+          <img src="<%= favourite.img_url %>" alt="" />
+          <div class="recordInfo">
+            <h3>Record title: <%= favourite.title %></h3>
+            <p>Artist: <%= favourite.artist_name %></p>
+            <p>Price: <%= favourite.price %></p>
+            <p>Views: <%= favourite.listing_views %></p>
+            <div class="buttons">
+              <button><%=favourite.sold%></button>
+              <button class="favourite">*</button>
+            </div>
+          </div>
+        </div>
+        <% } %>
+      </section>
+      <section class="myListings">
+        <% for(let count of countListings) { %>
+        <h2>My Listings (<%= count.count %>)</h2>
+        <% } %> <% for(let record of records) { %>
+        <div class="Listingtile">
+          <img src="<%= record.img_url %>" alt="" />
+          <div class="recordInfo">
+            <h3>Record title: <%= record.title %></h3>
+            <p>Artist: <%= record.artist_name %></p>
+            <p>Price: <%= record.price %></p>
+            <p>Views: <%= record.listing_views %></p>
+            <div class="buttons">
+              <button>Delete</button>
+              <button class="soldButton">Sold</button>
+            </div>
+          </div>
+        </div>
+        <% } %>
+      </section>
+    </main>
     <footer>
       <a href="#">Contact Us</a>
       <a href="#">Terms Of Use</a>
     </footer>
     <script>
       $(document).ready(function () {
-        $(".favourite").on("click", function () {
+        $(".soldButton").on("click", function () {
           $(this).toggleClass("sold");
         });
         $(".favourite").on("click", function () {
