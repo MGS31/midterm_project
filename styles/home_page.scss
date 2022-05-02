@@ -3,25 +3,34 @@ header {
     display: flex;
 }
 
-body {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  flex-direction: column;
+.page {
+  background-color: lightgrey;
 }
 
 .body-box {
   display: flex;
-  flex-direction: column;
+  justify-content: flex-start;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  flex-direction: column;
+  background-color: lightgrey;
+  padding-left: 200px;
   align-items: flex-start;
+}
+
+div.favourites {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: lightgrey;
+  padding-left: 200px;
 }
 
 div.row {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
+  justify-content: space-around;
 }
 
 .record-home {
@@ -40,6 +49,7 @@ img.record_main {
   align-items: center;
   justify-content: center;
   align-content: center;
+  border-bottom: black;
 }
 
 .favourite_img{
@@ -73,6 +83,7 @@ img.record_main {
   align-items: flex-end;
   justify-content: space-between;
   padding-left: 10px;
+  border-bottom: black;
 }
 
 .record-day {
@@ -88,6 +99,7 @@ img.record_main {
   align-content: flex-start;
   padding-left: 50px;
   padding-top: 25px;
+  font-weight: bold;
 }
 
 .artist {
@@ -116,5 +128,10 @@ img.record_main {
 }
 
 footer {
+  padding: 50px 10px 20px;
   display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 90%;
 }
+
