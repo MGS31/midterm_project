@@ -2,6 +2,10 @@ const express = require("express");
 const res = require("express/lib/response");
 const router = express.Router();
 
+function getRandomNumberBetween(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
 module.exports = (db) => {
   router.get("/", (req, res) => {
     const sql =
@@ -14,13 +18,14 @@ module.exports = (db) => {
       if(error) {
         throw error;
       }
+      let user = getRandomNumberBetween(1, 8);
        const sql2 =
       `SELECT title, price, record_images.img_url
       FROM records
       JOIN record_images ON record_id = records.id
       JOIN favourite_records ON favourite_records.record_id = records.id
       JOIN users ON user_id = users.id
-      WHERE users.id = 7;`
+      WHERE users.id = ${user};`
       db.query(sql2, (error,results2) => {
         if(error) {
           throw error;
