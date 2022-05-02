@@ -48,6 +48,11 @@ const sellARecordAPIRoutes = require("./routes/api/sell_a_record");
 const sellARecordRoutes = require("./routes/display_sell");
 const postASellRoutes = require("./routes/post_sell");
 
+// *** for ADVANCED SEARCH feature ***
+const advancedSearch = require("./routes/advanced_search"); // to render advanced search page
+const advancedSearchAPI = require("./routes/api/records_search"); // end point for advanced search API (to handle get request)
+// *** for ADVANCED SEARCH feature ***
+
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
@@ -58,6 +63,10 @@ app.use("/api/home", myHomePageAPIRoutes(db));
 app.use("/api/sell", sellARecordAPIRoutes(db));
 
 
+// *** for ADVANCED SEARCH feature ***
+app.use("/api/records/search", advancedSearchAPI(db));
+// *** for ADVANCED SEARCH feature ***
+
 //Non API routes
 app.use("/mycollection", myCollectionRoutes(db));
 app.use("/myturntable", myTurntableRoutes(db));
@@ -65,6 +74,10 @@ app.use("/home", myHomePageRoutes(db));
 app.use("/sell", sellARecordRoutes(db));
 app.use("/complete", postASellRoutes(db));
 
+
+// *** for ADVANCED SEARCH feature ***
+app.use("/advanced_search", advancedSearch(db));
+// *** for ADVANCED SEARCH feature ***
 
 // Note: mount other resources here, using the same pattern above
 
