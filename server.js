@@ -8,6 +8,7 @@ const express = require("express");
 const app = express();
 const morgan = require("morgan");
 
+
 // PG database client/connection setup
 const { Pool } = require("pg");
 const dbParams = require("./lib/db.js");
@@ -43,6 +44,9 @@ const myTurntableRoutes = require("./routes/my_turntable");
 const myTurntableAPIRoutes = require("./routes/api/my_turntable");
 const myHomePageAPIRoutes = require("./routes/api/home_page");
 const myHomePageRoutes = require("./routes/home_page");
+const sellARecordAPIRoutes = require("./routes/api/sell_a_record");
+const sellARecordRoutes = require("./routes/display_sell");
+const postASellRoutes = require("./routes/post_sell");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -51,11 +55,16 @@ app.use("/api/widgets", widgetsRoutes(db));
 app.use("/api/mycollection", myCollectionAPIRoutes(db));
 app.use("/api/myturntable", myTurntableAPIRoutes(db));
 app.use("/api/home", myHomePageAPIRoutes(db));
+app.use("/api/sell", sellARecordAPIRoutes(db));
+
 
 //Non API routes
 app.use("/mycollection", myCollectionRoutes(db));
 app.use("/myturntable", myTurntableRoutes(db));
 app.use("/home", myHomePageRoutes(db));
+app.use("/sell", sellARecordRoutes(db));
+app.use("/complete", postASellRoutes(db));
+
 
 // Note: mount other resources here, using the same pattern above
 
