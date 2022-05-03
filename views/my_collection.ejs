@@ -48,10 +48,10 @@
             <p>Price: <%= record.price %></p>
             <p>Views: <%= record.listing_views %></p>
             <div class="buttons">
-              <form method="DELETE" action="/mycollection/<%= record.id %>">
+              <form method="POST" action="/mycollection/delete<%= record.id %>">
                 <button type="submit" class="deleteButton">Delete</button>
               </form>
-              <form method="POST" action="/mycollection/<%= record.id %>">
+              <form method="post" action="/mycollection/<%= record.id %>">
                 <button type-="submit" class="soldButton">Sold</button>
               </form>
             </div>
@@ -71,9 +71,9 @@
       });
       $(document).ready(function () {
         SetClass();
-        // $(".favourite").on("click", function () {
-        //   $(this).toggleClass("favourited");
-        // });
+        $(".favourite").on("click", function () {
+          $(this).toggleClass("favourited");
+        });
       });
       const SetClass = function () {
         $(".soldButton").addClass(localStorage.className);
