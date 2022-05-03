@@ -1,0 +1,77 @@
+body {
+  background-color: lightgray;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 5px dashed maroon;
+}
+
+.record {
+  padding-bottom: 2em;
+  border-bottom: 2px solid darkgray;
+}
+
+.recordTitle {
+  display: flex;
+}
+
+.recordTitle p {
+  display: flex;
+  margin-left: 1em;
+  align-items: center;
+}
+
+.recordArtist {
+  display: flex;
+}
+
+.favourite {
+  display: flex;
+  margin-left: 1em;
+  margin-top: 19.92px;
+  width: 25px;
+  height: 25px;
+  align-items: center;
+}
+
+.recordInfo {
+  display: flex;
+}
+
+.recordInfo p {
+  padding-left: 3em;
+  padding-bottom: 1em;
+}
+
+.userComment {
+  display: flex;
+}
+
+.comments form {
+  display: flex;
+  flex-direction: column;
+  margin: 1em;
+}
+
+.comments 
+
+.comments input {
+  width: 25%;
+}
+
+.comments button {
+  width: 3em;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1em;
+}
+
+img {
+  width: 350px;
+  height: 350px;
+}
