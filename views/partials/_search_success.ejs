@@ -1,0 +1,18 @@
+<% for (const record of records) { %>
+  <div style="outline: 2px solid black;">
+    <img src="<%= record.img_url %>" alt="record image" width="50" height="50">
+    <a href="/records/<%=record.id%>"><h4><%= record.title %></h4></a>
+    <h4><%= record.artist_name %></h4>
+    <h4>$<%= record.price %></h4>
+    <h4><%= record.listing_views %></h4>
+    
+    <% if (record.sold === false) { %>
+    <h4>Available</h4>
+    <% } %>
+
+    <% if (record.sold === true) { %>
+      <h4>Sold</h4>
+      <% } %>
+
+  </div>
+<% } %>

@@ -27,6 +27,8 @@ module.exports = (db) => {
     let queryString = `
     SELECT *
     FROM records
+    JOIN record_images
+    ON records.id = record_images.record_id
    `;
 
     // query modification to search by title
@@ -50,6 +52,7 @@ module.exports = (db) => {
     // query modification to search by min and max price
     if (minPrice && maxPrice) {
       queryParams.push(minPrice * 100, maxPrice * 100); // *100 to convert from dollars to cents
+      appliedFilters.push('Price');
       if (queryParams.length === 2) { //checks if more than 1 WHERE clauses is needed, to see if AND is required
         queryString += `WHERE price >= $${queryParams.length - 1} AND price <= $${queryParams.length} `;
       } else {
@@ -69,31 +72,32 @@ module.exports = (db) => {
     }
 
     // query modification to search by availability
-    // UNCOMMENT ONCE SOLD HAS BEEN ADDED TO SCHEMA
-    // if (availability !== null) {
-    //   queryParams.push(availability);
-    //   if (queryParams.length === 1) { //checks if more than 1 WHERE clauses is needed, to see if AND is required
-    //     queryString += `WHERE availability = $${queryParams.length} `;
-    //   } else {
-    //     queryString += `AND availability = $${queryParams.length} `;
-    //   }
-    // }
+    if (availability === true) {
+      appliedFilters.push('Availability');
+      if (queryParams.length === 0) { //checks if more than 1 WHERE clauses is needed, to see if AND is required
+        queryString += `WHERE sold = FALSE `;
+      } else {
+        queryString += `AND sold = FALSE `;
+      }
+    } else if (availability === false) {
+      appliedFilters.push('Availability');
+      if (queryParams.length === 0) { //checks if more than 1 WHERE clauses is needed, to see if AND is required
+        queryString += `WHERE sold = TRUE `;
+      } else {
+        queryString += `AND sold = TRUE `;
+      }
+    }
 
     db.query(queryString, queryParams)
       .then((result) => {
-        
-        let results = 0;
-        if (result.rows.length > 0) {
-          results = result.rows.length
-          const templateVars = {
-            records: result.rows,
-            appliedFilters: appliedFilters
-          };
-          res.render("advanced_search_results", templateVars);
-        } else if (result.rows.length === 0) {
-          res.render("advanced_search_results_null");
+
+        const templateVars = {
+          records: result.rows,
+          appliedFilters: appliedFilters
         };
 
+        res.render("advanced_search_results", templateVars);
+        
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });
