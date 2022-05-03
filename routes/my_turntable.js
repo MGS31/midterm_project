@@ -22,16 +22,24 @@ module.exports = (db) => {
         if (error) {
           throw error;
         }
-        res.render("my_turntable", {
-          records: results.rows,
-          comments: results2.rows,
+        const countComments = `
+        SELECT count(*) FROM comments WHERE record_id = 3`;
+        db.query(countComments, (error, results3) => {
+          if (error) {
+            throw error;
+          }
+          res.render("my_turntable", {
+            records: results.rows,
+            comments: results2.rows,
+            countComments: results3.rows,
+          });
         });
       });
     });
   });
   router.post("/", (req, res) => {
     let userComment = req.body["newComment"];
-    let commentValues = [2, 6, userComment];
+    let commentValues = [3, 6, userComment];
     let newComment = `
     INSERT INTO comments (record_id,user_id, description) VALUES ($1 ,$2 ,$3)`;
     db.query(newComment, commentValues);
