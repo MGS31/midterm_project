@@ -29,8 +29,9 @@
         <% } %>
       </section>
       <section class="comments">
-        <h2>Comments (3)</h2>
-        <% for(let comment of comments) { %>
+        <% for(let count of countComments) { %>
+        <h2>Comments (<%= count.count %>)</h2>
+        <% } %> <% for(let comment of comments) { %>
         <div class="userComment">
           <img src="" alt="" />
           <h3><%= comment.username %></h3>
