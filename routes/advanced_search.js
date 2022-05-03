@@ -19,8 +19,9 @@ module.exports = (db) => {
         appliedFilters: []
       };
 
+console.log(templateVars);
+
       res.render("advanced_search_results", templateVars);
-      
 
     })
     .catch((err) => {

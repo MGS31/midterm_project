@@ -7,11 +7,11 @@
     <h4><%= record.listing_views %></h4>
     
     <% if (record.sold === false) { %>
-    <h4>Available</h4>
+    <h4 class="record-available">Available</h4>
     <% } %>
 
     <% if (record.sold === true) { %>
-      <h4>Sold</h4>
+      <h4 class="record-sold">Sold</h4>
       <% } %>
 
   </div>

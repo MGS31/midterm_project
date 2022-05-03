@@ -12,5 +12,5 @@ INSERT INTO records (title, price, genre, artist_name, description, listing_view
 VALUES ('Celeste', '12', 'Jazz', 'Psalm Trees', 'Favourite thing to relax to, honestly a must have!', 0, 2);
 INSERT INTO records (title, price, genre, artist_name, description, listing_views, seller_id)
 VALUES ('Bump This', '3', 'Alternative', 'Danny Gonzalez', 'Great music and always makes me laugh', 0, 8);
-INSERT INTO records (title, price, genre, artist_name, description, listing_views, seller_id)
-VALUES ('Flower Boy', '19', 'Hip-Hop', 'Tyler, The Creator', 'Straight up banger! Can never go wrong with Tyle, the creator', 0, 2);
+INSERT INTO records (title, price, genre, artist_name, description, listing_views, seller_id, sold)
+VALUES ('Flower Boy', '19', 'Hip-Hop', 'Tyler, The Creator', 'Straight up banger! Can never go wrong with Tyle, the creator', 0, 2, true);
