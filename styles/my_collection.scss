@@ -8,18 +8,20 @@ main {
   border-bottom: 5px dashed maroon;
 }
 
-section .favourites,
-section .myListings {
+.favourites,
+.myListings {
   display: flex;
   flex-direction: column;
   width: 50%;
+  overflow: scroll;
+  max-height: 100vh;
+  padding: 3em;
 }
 
 .Favouritestile,
 .Listingtile {
   display: flex;
   border: 2px solid black;
-  height: 25%;
   margin-bottom: 2em;
   flex-direction: row;
   align-content: center;
