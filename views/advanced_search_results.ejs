@@ -37,23 +37,28 @@
     <input type="submit" value="Submit">
   </form>
 
-  <h2>Records (<%= records.length %>)</h2>
-  <div style="outline: 2px solid black;">
-  <h3>Applied Filters (<%= appliedFilters.length %>)</h3>
-  <% for (const filter of appliedFilters) { %>
-    <p><%= filter %></p>
+  <% if(appliedFilters.length > 0) { %>
+    <div style="outline: 2px solid black;">
+      <h3>Applied Filters (<%= appliedFilters.length %>)</h3>
+      
+      <% for (const filter of appliedFilters) { %>
+        <p><%= filter %></p>
+      <% } %>
+      
+      <a href="/advanced_search">Clear Filters</a>
+    </div>
   <% } %>
-  <a href="/advanced_search">Clear Filters</a>
-</div>
+
+  <h2>Records (<%= records.length %>)</h2>
   
-  <% for (const record of records) { %>
-      <div style="outline: 2px solid black;">
-        <a href="/records/<%record.id%>"><h4><%= record.title %></h4></a>
-        <h4><%= record.artist_name %></h4>
-        <h4>$<%= record.price %></h4>
-        <h4><%= record.listing_views %></h4>
-      </div>
-    <% } %>
-  
+  <% if(records.length > 0) { %>
+    <%- include('partials/_search_success.ejs') %>
+    <% console.log(records) %>
+  <% } %>
+
+  <% if(records.length <= 0) { %>
+    <%- include('partials/_search_success.ejs') %>
+  <% } %>
+
 </body>
 </html>
