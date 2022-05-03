@@ -48,7 +48,9 @@
             <p>Price: <%= record.price %></p>
             <p>Views: <%= record.listing_views %></p>
             <div class="buttons">
-              <button>Delete</button>
+              <form method="POST" action="/mycollection">
+                <button type="submit">Delete</button>
+              </form>
               <button class="soldButton">Sold</button>
             </div>
           </div>
