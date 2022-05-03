@@ -18,7 +18,7 @@
     <h1 id="myCollection">My Collection</h1>
     <main>
       <section class="favourties">
-        <% for(let count of countListings) { %>
+        <% for(let count of countFavourites) { %>
         <h2>Favourites (<%= count.count %>)</h2>
         <% } %> <% for(let favourite of favourites) { %>
         <div class="Favouritestile">
@@ -48,10 +48,12 @@
             <p>Price: <%= record.price %></p>
             <p>Views: <%= record.listing_views %></p>
             <div class="buttons">
-              <form method="POST" action="/mycollection">
-                <button type="submit">Delete</button>
+              <form method="DELETE" action="/mycollection/<%= record.id %>">
+                <button type="submit" class="deleteButton">Delete</button>
               </form>
-              <button class="soldButton">Sold</button>
+              <form method="POST" action="/mycollection/<%= record.id %>">
+                <button type-="submit" class="soldButton">Sold</button>
+              </form>
             </div>
           </div>
         </div>
@@ -63,14 +65,19 @@
       <a href="#">Terms Of Use</a>
     </footer>
     <script>
-      $(document).ready(function () {
-        $(".soldButton").on("click", function () {
-          $(this).toggleClass("sold");
-        });
-        $(".favourite").on("click", function () {
-          $(this).toggleClass("favourited");
-        });
+      $(".soldButton").on("click", function () {
+        $(this).addClass("sold");
+        localStorage.className = "sold";
       });
+      $(document).ready(function () {
+        SetClass();
+        // $(".favourite").on("click", function () {
+        //   $(this).toggleClass("favourited");
+        // });
+      });
+      const SetClass = function () {
+        $(".soldButton").addClass(localStorage.className);
+      };
     </script>
   </body>
 </html>
