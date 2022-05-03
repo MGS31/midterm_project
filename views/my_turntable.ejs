@@ -3,36 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/myturntable.css" />
     <title>My Turntable</title>
   </head>
   <body>
-    <section class="record">
-      <% for(let record of records) { %>
-      <h1>Record title: <%= record.title %></h1>
-      <p><%= record.sold %></p>
-      <h2><%= record.artist_name %></h2>
-      <button>*</button>
-      <h3>Price: <%= record.price %></h3>
-      <img src="<%= record.img_url %>" alt="" />
-      <p>Description: <%= record.description %></p>
-      <p>Views: <%= record.listing_views %></p>
-      <% } %>
-    </section>
-    <section class="comments">
-      <form action="/myturntable" method="POST">
-        <label for="newComment">New Comment</label>
-        <input type="text" name="newComment" value="" />
-        <button type="submit">Post</button>
-      </form>
-      <h2>Comments (3)</h2>
-      <% for(let comment of comments) { %>
-      <div class="userComment">
-        <img src="" alt="" />
-        <h3><%= comment.username %></h3>
-        <p><%= comment.description %></p>
-      </div>
-      <% } %>
-    </section>
+    <main>
+      <section class="record">
+        <% for(let record of records) { %>
+        <div class="recordTitle">
+          <h1>Record title: <%= record.title %></h1>
+          <p><%= record.sold %></p>
+        </div>
+        <div class="recordArtist">
+          <h2><%= record.artist_name %></h2>
+          <button class="favourite">*</button>
+        </div>
+        <h3>Price: <%= record.price %></h3>
+        <div class="recordInfo">
+          <img src="<%= record.img_url %>" alt="" />
+          <div>
+            <p>Description: <%= record.description %></p>
+            <p>Views: <%= record.listing_views %></p>
+          </div>
+        </div>
+        <% } %>
+      </section>
+      <section class="comments">
+        <h2>Comments (3)</h2>
+        <% for(let comment of comments) { %>
+        <div class="userComment">
+          <img src="" alt="" />
+          <h3><%= comment.username %></h3>
+          <p><%= comment.description %></p>
+        </div>
+        <% } %>
+        <form action="/myturntable" method="POST">
+          <label for="newComment">New Comment</label>
+          <div class="commentBox">
+            <input type="text" name="newComment" placeholder="Post a comment" />
+            <button type="submit">Post</button>
+          </div>
+        </form>
+      </section>
+    </main>
     <footer>
       <a href="#">Contact Us</a>
       <a href="#">Terms Of Use</a>
