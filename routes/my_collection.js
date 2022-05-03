@@ -52,8 +52,11 @@ module.exports = (db) => {
         });
       });
     });
+    router.get("/:id", (req, res) => {
+      res.redirect("/mycollection");
+    });
   });
-  router.delete("/:id", (req, res) => {
+  router.post("/delete:id", (req, res) => {
     let deledtedRecordID = [req.params.id];
     let deleteRecord = `DELETE FROM records WHERE id = $1`;
     db.query(deleteRecord, deledtedRecordID);
