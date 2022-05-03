@@ -4,20 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Collection</title>
-    <link rel="stylesheet" href="../styles/my_collection.css" />
     <!-- Bootstrap CSS -->
-    <!-- <link
+    <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
       integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
       crossorigin="anonymous"
-    /> -->
+    />
+    <!-- My CSS file -->
+    <link rel="stylesheet" href="../styles/my_collection.css" />
+
+    <!-- JQuery/AJAX Library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   </head>
   <body class="">
     <h1 id="myCollection">My Collection</h1>
     <main>
-      <section class="favourties">
+      <section class="favourites">
         <% for(let count of countFavourites) { %>
         <h2>Favourites (<%= count.count %>)</h2>
         <% } %> <% for(let favourite of favourites) { %>
