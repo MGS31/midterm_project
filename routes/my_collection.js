@@ -30,18 +30,18 @@ module.exports = (db) => {
           if (error) {
             throw error;
           }
-          for (let count of results3.rows) {
-            console.log(count);
-          }
+          // for (let count of results3.rows) {
+          //   console.log(count);
+          // }
           const countFavourites = `
-        SELECT count(*) from favourite_records where user_id = 7;`;
+            SELECT count(*) from favourite_records where user_id = 7;`;
           db.query(countFavourites, (error, results4) => {
             if (error) {
               throw error;
             }
-            for (let count of results3.rows) {
-              console.log(count);
-            }
+            // for (let count of results3.rows) {
+            //   console.log(count);
+            // }
             res.render("my_collection", {
               records: results.rows,
               favourites: results2.rows,
@@ -52,6 +52,12 @@ module.exports = (db) => {
         });
       });
     });
+  });
+  router.post("/", (req, res) => {
+    let deledtedRecordID = [1];
+    let deleteRecord = `DELETE FROM records WHERE id = $1`;
+    db.query(deleteRecord, deledtedRecordID);
+    res.redirect("/mycollection");
   });
   return router;
 };
