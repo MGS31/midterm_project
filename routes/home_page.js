@@ -9,7 +9,7 @@ function getRandomNumberBetween(min, max) {
 module.exports = (db) => {
   router.get("/", (req, res) => {
     const sql =
-    `SELECT title, artist_name, price, sold, description, listing_views, record_images.img_url
+    `SELECT records.id, title, artist_name, price, sold, description, listing_views, record_images.img_url
     FROM records
     JOIN record_images ON record_id = records.id
     ORDER BY RANDOM()
@@ -20,7 +20,7 @@ module.exports = (db) => {
       }
       let user = getRandomNumberBetween(1, 8);
        const sql2 =
-      `SELECT title, price, record_images.img_url
+      `SELECT records.id, title, price, record_images.img_url
       FROM records
       JOIN record_images ON record_id = records.id
       JOIN favourite_records ON favourite_records.record_id = records.id
