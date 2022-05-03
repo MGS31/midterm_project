@@ -15,13 +15,8 @@
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
   <script type="text/javascript" src="/scripts/home_page.js"></script>
 </head>
-<header>
- 
-</header>
-
 <body>
-   <%- include('partials/_header') %>
-
+  <%- include('partials/_header') %>
   <section class="page">
   <div class="body-box">
     <% for(const record of records) { %>
@@ -37,7 +32,9 @@
             <h5 class="price-record_day">$<%= record.price %>.00</h5>
           </div>
           <div class="all-but-title">
+            <a href="http://localhost:8080/myturntable/<%= record.id %>" class="main-img">
             <img src="<%= record.img_url %>" class="record_main" alt="...">
+            </a>
             <div class="record-detail">
               <div class="record-dis">
                 <p class="desc-text">
@@ -57,19 +54,25 @@
       </div>
       <% } %>
   </div>
+
   <div class="favourites">
+    <a href="http://localhost:8080/mycollection/" class="fav-link">
     <h3 class="fav-name">Your Favourites</h3>
-    <div class="container">
+  </a>
+    <div class="fav-container">
       <% for (let favourite of favourites) { %>
-        <div class="row">
+        <div class="fav-display">
+          <div class="f-img">
+          <a href="http://localhost:8080/myturntable/<%= favourite.id %>" class="fav-img">
           <img src="<%= favourite.img_url %>" class="favourite_img" alt="...">
-          <div class="card-body">
-            <h6>
-              <%= favourite.title %>
-            </h6>
-            <h6>$<%= favourite.price %>.00</h6>
-          </div>
+        </a>
+          <h6 class="fav-title"><%= favourite.title %>
+            <br>$<%= favourite.price %>.00<br></h6>
+        </a>
+      </div>
           <% } %>
+        </div>
+        </div>
         </div>
     </div>
   </div>
