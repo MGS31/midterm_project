@@ -31,9 +31,12 @@
             <p>Artist: <%= favourite.artist_name %></p>
             <p>Price: <%= favourite.price %></p>
             <p>Views: <%= favourite.listing_views %></p>
-            <div class="buttons">
-              <button><%=favourite.sold%></button>
-              <button class="favourite">*</button>
+            <div>
+              <% if (favourite.sold === false) { %>
+              <p class="record-available">Available</p>
+              <% } %> <% if (favourite.sold === true) { %>
+              <p class="record-sold">Sold</p>
+              <% } %>
             </div>
           </div>
         </div>
@@ -51,7 +54,10 @@
             <p>Price: <%= record.price %></p>
             <p>Views: <%= record.listing_views %></p>
             <div class="buttons">
-              <form method="POST" action="/mycollection/delete<%= record.id %>">
+              <form
+                method="POST"
+                action="/mycollection/delete/<%= record.id %>"
+              >
                 <button type="submit" class="deleteButton">Delete</button>
               </form>
               <form method="post" action="/mycollection/<%= record.id %>">
