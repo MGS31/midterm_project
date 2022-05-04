@@ -10,6 +10,7 @@ main {
 
 .record {
   padding-bottom: 2em;
+  padding-left: 2em;
   border-bottom: 2px solid darkgray;
 }
 
@@ -17,7 +18,7 @@ main {
   display: flex;
 }
 
-.recordTitle p {
+.recordTitle div {
   display: flex;
   margin-left: 1em;
   align-items: center;
@@ -43,6 +44,12 @@ main {
 .recordInfo p {
   padding-left: 3em;
   padding-bottom: 1em;
+}
+
+.comments {
+  display: flex;
+  flex-direction: column;
+  padding-left: 2em;
 }
 
 .userComment {
