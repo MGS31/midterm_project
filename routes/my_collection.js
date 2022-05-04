@@ -56,11 +56,12 @@ module.exports = (db) => {
       res.redirect("/mycollection");
     });
   });
-  router.post("/delete:id", (req, res) => {
+  router.post("/delete/:id", (req, res) => {
     let deledtedRecordID = [req.params.id];
     let deleteRecord = `DELETE FROM records WHERE id = $1`;
-    db.query(deleteRecord, deledtedRecordID);
-    res.redirect("/mycollection");
+    db.query(deleteRecord, deledtedRecordID).then(() =>
+      res.redirect("/mycollection")
+    );
   });
   router.post("/:id", (req, res) => {
     let soldRecordID = [req.params.id];
