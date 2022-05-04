@@ -14,7 +14,6 @@
     <title>My Turntable</title>
   </head>
   <body>
-    <!-- <%- include('partials/_header') %> -->
     <main>
       <section class="record">
         <% for(let record of records) { %>
@@ -30,7 +29,9 @@
         </div>
         <div class="recordArtist">
           <h2><%= record.artist_name %></h2>
-          <button class="favourite">*</button>
+          <div class="favouriteButton">
+            <button>*</button>
+          </div>
         </div>
         <h3>Price: <%= record.price %></h3>
         <div class="recordInfo">
@@ -44,7 +45,7 @@
       </section>
       <section class="comments">
         <form action="/myturntable/<%= records[0].id %>" method="POST">
-          <label for="newComment">New Comment</label>
+          <h3>New Comment</h3>
           <div class="commentBox">
             <input type="text" name="newComment" placeholder="Post a comment" />
             <button type="submit">Post</button>

@@ -41,7 +41,7 @@ module.exports = (db) => {
   router.post("/:id", (req, res) => {
     let recordID = req.params.id;
     let userComment = req.body["newComment"];
-    let commentValues = [recordID, 6, userComment];
+    let commentValues = [recordID, 1, userComment];
     let newComment = `
     INSERT INTO comments (record_id,user_id, description) VALUES ($1 ,$2 ,$3)`;
     db.query(newComment, commentValues).then(() => {
