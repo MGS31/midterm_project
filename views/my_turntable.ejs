@@ -29,22 +29,21 @@
         <% } %>
       </section>
       <section class="comments">
-        <% for(let count of countComments) { %>
-        <h2>Comments (<%= count.count %>)</h2>
-        <% } %> <% for(let comment of comments) { %>
-        <div class="userComment">
-          <img src="" alt="" />
-          <h3><%= comment.username %></h3>
-          <p><%= comment.description %></p>
-        </div>
-        <% } %>
-        <form action="/myturntable" method="POST">
+        <form action="/myturntable/<%= records[0].id %>" method="POST">
           <label for="newComment">New Comment</label>
           <div class="commentBox">
             <input type="text" name="newComment" placeholder="Post a comment" />
             <button type="submit">Post</button>
           </div>
         </form>
+        <% for(let count of countComments) { %>
+        <h2>Comments (<%= count.count %>)</h2>
+        <% } %> <% for(let comment of comments) { %>
+        <div class="userComment">
+          <h3><%= comment.username %></h3>
+          <p><%= comment.description %></p>
+        </div>
+        <% } %>
       </section>
     </main>
     <footer>
