@@ -3,16 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="../styles/myturntable.css" />
     <title>My Turntable</title>
   </head>
   <body>
+    <!-- <%- include('partials/_header') %> -->
     <main>
       <section class="record">
         <% for(let record of records) { %>
         <div class="recordTitle">
           <h1>Record title: <%= record.title %></h1>
-          <p><%= record.sold %></p>
+          <div>
+            <% if (record.sold === false) { %>
+            <p class="record-available">Available</p>
+            <% } %> <% if (record.sold === true) { %>
+            <p class="record-sold">Sold</p>
+            <% } %>
+          </div>
         </div>
         <div class="recordArtist">
           <h2><%= record.artist_name %></h2>
