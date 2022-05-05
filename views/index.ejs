@@ -44,9 +44,13 @@
               <div class="record-listing">
                 <p class="views">Views: <%= record.listing_views %>
                 </p>
-                <p class="availability">
-                  <%= record.sol %>
-                </p>
+                <div class="buttons">
+                  <form method="POST" action="/favs">
+                    <input name="record_id" class="fav_id" value="<%= record.id %>" type="hidden">
+                    <input name="user_id" class="fav_user" value="<%= record.seller_id %>" type="hidden">
+                    <button type="submit" class="favouriteButton">*</button>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
