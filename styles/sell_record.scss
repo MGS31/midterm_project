@@ -1,4 +1,6 @@
-
+body {
+  background-color: lightgrey;
+}
 footer {
   margin: 50px 10px 20px;
   display: flex;
@@ -18,6 +20,7 @@ footer {
 .head {
   padding-left:440px;
   font-weight: bold;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 .form-control {
