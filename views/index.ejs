@@ -17,9 +17,19 @@
   <!-- Javascript page links -->
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
   <script type="text/javascript" src="/scripts/home_page.js"></script>
+
+  <!-- Font Awesome-->
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
 </head>
 <body>
   <%- include('partials/_header') %>
+  <main>
   <section class="page">
   <div class="body-box">
     <% for(const record of records) { %>
@@ -51,7 +61,7 @@
                   <form method="POST" action="/favs">
                     <input name="record_id" class="fav_id" value="<%= record.id %>" type="hidden">
                     <input name="user_id" class="fav_user" value="<%= record.seller_id %>" type="hidden">
-                    <button type="submit" class="favouriteButton"></button>
+                    <button type="submit" class="favouriteButton"><i class="fa-solid fa-star"></i></button>
                   </form>
                 </div>
               </div>
@@ -83,6 +93,7 @@
         </div>
     </div>
   </div>
+</main>
   <footer class="footer">
     <a href="#">Contact Us</a>
     <a href="#">Terms Of Use</a>
