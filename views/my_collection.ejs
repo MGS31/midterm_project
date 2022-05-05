@@ -4,37 +4,89 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Collection</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+    <!-- My CSS file -->
+    <link rel="stylesheet" href="../styles/my_collection.css" />
+
+    <!-- JQuery/AJAX Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   </head>
-  <body>
-    <h1>My Collection</h1>
-    <section class="favourties">
-      <h2>Favourites (18)</h2>
-      <div class="tile">
-        <img />
-        <h3>Record title</h3>
-        <p>Artist</p>
-        <p>Price</p>
-        <p>Views 100</p>
-        <button>Sold</button>
-        <button>*</button>
-      </div>
-    </section>
-    <section class="myListings">
-      <h2>My Listings (73)</h2>
-      <div class="tile">
-        <img />
-        <h3>Record title</h3>
-        <p>Artist</p>
-        <p>Price</p>
-        <p>Views 100</p>
-        <button>Available</button>
-        <button>Delete</button>
-        <button>Sold</button>
-      </div>
-    </section>
+  <body class="">
+    <h1 id="myCollection">My Collection</h1>
+    <main>
+      <section class="favourites">
+        <% for(let count of countFavourites) { %>
+        <h2>Favourites (<%= count.count %>)</h2>
+        <% } %> <% for(let favourite of favourites) { %>
+        <div class="Favouritestile">
+          <img src="<%= favourite.img_url %>" alt="" />
+          <div class="recordInfo">
+            <h3>Record title: <%= favourite.title %></h3>
+            <p>Artist: <%= favourite.artist_name %></p>
+            <p>Price: <%= favourite.price %></p>
+            <p>Views: <%= favourite.listing_views %></p>
+            <div>
+              <% if (favourite.sold === false) { %>
+              <p class="record-available">Available</p>
+              <% } %> <% if (favourite.sold === true) { %>
+              <p class="record-sold">Sold</p>
+              <% } %>
+            </div>
+          </div>
+        </div>
+        <% } %>
+      </section>
+      <section class="myListings">
+        <% for(let count of countListings) { %>
+        <h2>My Listings (<%= count.count %>)</h2>
+        <% } %> <% for(let record of records) { %>
+        <div class="Listingtile">
+          <img src="<%= record.img_url %>" alt="" />
+          <div class="recordInfo">
+            <h3>Record title: <%= record.title %></h3>
+            <p>Artist: <%= record.artist_name %></p>
+            <p>Price: <%= record.price %></p>
+            <p>Views: <%= record.listing_views %></p>
+            <div class="buttons">
+              <form
+                method="POST"
+                action="/mycollection/delete/<%= record.id %>"
+              >
+                <button type="submit" class="deleteButton">Delete</button>
+              </form>
+              <form method="post" action="/mycollection/<%= record.id %>">
+                <button type-="submit" class="soldButton">Sold</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <% } %>
+      </section>
+    </main>
     <footer>
       <a href="#">Contact Us</a>
       <a href="#">Terms Of Use</a>
     </footer>
+    <script>
+      $(".soldButton").on("click", function () {
+        $(this).addClass("sold");
+        localStorage.className = "sold";
+      });
+      $(document).ready(function () {
+        SetClass();
+        $(".favourite").on("click", function () {
+          $(this).toggleClass("favourited");
+        });
+      });
+      const SetClass = function () {
+        $(".soldButton").addClass(localStorage.className);
+      };
+    </script>
   </body>
 </html>
