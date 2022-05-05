@@ -1,0 +1,11 @@
+INSERT INTO favourite_records (record_id, user_id) VALUES('1','7');
+INSERT INTO favourite_records (record_id, user_id) VALUES('5','7');
+INSERT INTO favourite_records (record_id, user_id) VALUES('3','5');
+INSERT INTO favourite_records (record_id, user_id) VALUES('3','6');
+INSERT INTO favourite_records (record_id, user_id) VALUES('5','4');
+INSERT INTO favourite_records (record_id, user_id) VALUES('3','2');
+INSERT INTO favourite_records (record_id, user_id) VALUES('4','2');
+INSERT INTO favourite_records (record_id, user_id) VALUES('5','4');
+INSERT INTO favourite_records (record_id, user_id) VALUES('5','3');
+INSERT INTO favourite_records (record_id, user_id) VALUES('1','3');
+INSERT INTO favourite_records (record_id, user_id) VALUES('4','1');

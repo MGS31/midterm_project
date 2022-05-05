@@ -3,38 +3,65 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Collection</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../styles/myturntable.css" />
+    <title>My Turntable</title>
   </head>
   <body>
-    <section class="record">
-      <h1>Record Title</h1>
-      <button>Available</button>
-      <h2>Artist Name</h2>
-      <button>*</button>
-      <h3>Price</h3>
-      <img src="" alt="" />
-      <img src="" alt="" />
-      <img src="" alt="" />
-      <img src="" alt="" />
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, natus.
-        Corporis, eos! Accusamus molestiae, consequuntur veritatis illum nostrum
-        quos maxime aspernatur error nulla inventore accusantium, porro nesciunt
-        impedit rerum ipsum!
-      </p>
-      <p>Views 100</p>
-    </section>
-    <section class="comments">
-      <h2>Comments (3)</h2>
-      <label for="newComment">New Comment</label>
-      <form action="input"></form>
-      <button>Post</button>
-      <div class="userComment">
-        <img src="" alt="" />
-        <h3>Username</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-      </div>
-    </section>
+    <%- include('partials/_header') %>
+    <main>
+      <section class="record">
+        <% for(let record of records) { %>
+        <div class="recordTitle">
+          <h1>Record title: <%= record.title %></h1>
+          <div>
+            <% if (record.sold === false) { %>
+            <p class="record-available">Available</p>
+            <% } %> <% if (record.sold === true) { %>
+            <p class="record-sold">Sold</p>
+            <% } %>
+          </div>
+        </div>
+        <div class="recordArtist">
+          <h2><%= record.artist_name %></h2>
+          <div class="favouriteButton">
+            <button>*</button>
+          </div>
+        </div>
+        <h3>Price: <%= record.price %></h3>
+        <div class="recordInfo">
+          <img src="<%= record.img_url %>" alt="" />
+          <div>
+            <p>Description: <%= record.description %></p>
+            <p>Views: <%= record.listing_views %></p>
+          </div>
+        </div>
+        <% } %>
+      </section>
+      <section class="comments">
+        <form action="/myturntable/<%= records[0].id %>" method="POST">
+          <h3>New Comment</h3>
+          <div class="commentBox">
+            <input type="text" name="newComment" placeholder="Post a comment" />
+            <button type="submit">Post</button>
+          </div>
+        </form>
+        <% for(let count of countComments) { %>
+        <h2>Comments (<%= count.count %>)</h2>
+        <% } %> <% for(let comment of comments) { %>
+        <div class="userComment">
+          <h3><%= comment.username %></h3>
+          <p><%= comment.description %></p>
+        </div>
+        <% } %>
+      </section>
+    </main>
     <footer>
       <a href="#">Contact Us</a>
       <a href="#">Terms Of Use</a>

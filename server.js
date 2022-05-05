@@ -111,14 +111,6 @@ app.use("/advanced_search", advancedSearch(db));
 //   res.render("sell_a_record");
 // });
 
-// app.get("/mycollection", (req, res) => {
-//   res.render("my_collection");
-// });
-
-// app.get("/myturntable", (req, res) => {
-//   res.render("my_turntable");
-// });
-
 app.listen(PORT, () => {
   console.log(`Sell-a-record app listening on port ${PORT}`);
 });
