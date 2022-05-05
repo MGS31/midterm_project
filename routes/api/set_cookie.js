@@ -3,12 +3,12 @@ const router = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-  
+
     function randomInteger(min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
-    let randomUserID = randomInteger(1, 8)
+    let randomUserID = 1;
 
     res.cookie('userID', randomUserID)
     res.redirect('/home/');
