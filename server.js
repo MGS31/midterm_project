@@ -56,6 +56,7 @@ const myHomePageRoutes = require("./routes/home_page");
 const sellARecordAPIRoutes = require("./routes/api/sell_a_record");
 const sellARecordRoutes = require("./routes/display_sell");
 const postASellRoutes = require("./routes/post_sell");
+const postFavsRoutes = require("./routes/post_favs");
 
 // *** for ADVANCED SEARCH feature ***
 const advancedSearch = require("./routes/advanced_search"); // to render advanced search page
@@ -90,7 +91,7 @@ app.use("/myturntable", myTurntableRoutes(db));
 app.use("/home", myHomePageRoutes(db));
 app.use("/sell", sellARecordRoutes(db));
 app.use("/complete", postASellRoutes(db));
-
+app.use("/favs", postFavsRoutes(db));
 
 // *** for ADVANCED SEARCH feature ***
 app.use("/advanced_search", advancedSearch(db));
