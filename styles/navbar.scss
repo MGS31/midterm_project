@@ -1,0 +1,39 @@
+nav {
+  display: flex;
+  background-color: maroon;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 1em;
+  padding-left: 1em;
+  height: 64px;
+}
+
+.header-img {
+  height: 50px;
+  width: 50px;
+}
+
+.app-name {
+  font-family: "Bungee", cursive;
+  font-family: "Josefin Sans", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
+  color: white;
+  margin-right: 1em;
+}
+
+.search-bar {
+  display: flex;
+}
+
+#title {
+  margin-right: 1em;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-link:hover {
+  color: lightgray;
+}

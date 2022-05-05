@@ -1,22 +1,35 @@
+<head>
+  <link rel="stylesheet" href="../../styles/navbar.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bungee&family=Josefin+Sans&family=Source+Sans+Pro:wght@200&display=swap"
+    rel="stylesheet"
+  />
+</head>
 <header>
   <nav>
     <a href="http://localhost:8080/home/">
-    <img src="https://cdn3.iconfinder.com/data/icons/object-emoji/50/Record-512.png" alt="logo" width="50" height="50">
+      <img
+        src="https://cdn3.iconfinder.com/data/icons/object-emoji/50/Record-512.png"
+        alt="logo"
+        width="50"
+        height="50"
+        class="header-img"
+      />
     </a>
     <form action="/api/records/search" method="get">
-
-      <label for="title">Title</label>
-      <input type="text" id="title" name="title"><br>
-
-      <input type="submit" value="Submit">
+      <div class="search-bar">
+        <label class="app-name" for="title">Rockin' Records</label>
+        <input type="text" id="title" name="title" /><br />
+        <input type="submit" value="Search" />
+      </div>
     </form>
-    <a href="/mycollection">My Collection</a>
-    <a href="/advanced_search">Advanced Search</a>
-    <a href="/sell">Sell-A-Record</a>
-
+    <a class="nav-link" href="/mycollection">My Collection</a>
+    <a class="nav-link" href="/advanced_search">Advanced Search</a>
+    <a class="nav-link" href="/sell">Sell-A-Record</a>
     <form action="/api/records/set_cookie" method="get">
-      <input type="submit" value="Login">
+      <input type="submit" value="Login" />
     </form>
-
   </nav>
 </header>

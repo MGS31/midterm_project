@@ -26,7 +26,7 @@
         <h2>Favourites (<%= count.count %>)</h2>
         <% } %> <% for(let favourite of favourites) { %>
         <div class="Favouritestile">
-          <img src="<%= favourite.img_url %>" alt="" />
+          <img src="<%= favourite.img_url %>" alt="" class="record-img" />
           <div class="recordInfo">
             <h3>Record title: <%= favourite.title %></h3>
             <p>Artist: <%= favourite.artist_name %></p>
@@ -48,7 +48,7 @@
         <h2>My Listings (<%= count.count %>)</h2>
         <% } %> <% for(let record of records) { %>
         <div class="Listingtile">
-          <img src="<%= record.img_url %>" alt="" />
+          <img src="<%= record.img_url %>" alt="" class="record-img" />
           <div class="recordInfo">
             <h3>Record title: <%= record.title %></h3>
             <p>Artist: <%= record.artist_name %></p>

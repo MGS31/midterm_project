@@ -8,7 +8,7 @@ module.exports = (db) => {
     FROM records
     JOIN record_images ON records.id = record_id
     JOIN users ON seller_id = users.id
-    WHERE username = 'kira21' LIMIT 3`;
+    WHERE username = 'alice1' LIMIT 3`;
     db.query(myListing, (error, results) => {
       if (error) {
         throw error;
@@ -19,13 +19,13 @@ module.exports = (db) => {
       JOIN record_images ON record_id = records.id
       JOIN favourite_records ON favourite_records.record_id = records.id
       JOIN users ON user_id = users.id
-      WHERE users.id = 2`;
+      WHERE users.id = 1`;
       db.query(myFavourites, (error, results2) => {
         if (error) {
           throw error;
         }
         const countListings = `
-        SELECT count(*) from records where seller_id = 2;`;
+        SELECT count(*) from records where seller_id = 1;`;
         db.query(countListings, (error, results3) => {
           if (error) {
             throw error;
@@ -34,7 +34,7 @@ module.exports = (db) => {
           //   console.log(count);
           // }
           const countFavourites = `
-            SELECT count(*) from favourite_records where user_id = 2;`;
+            SELECT count(*) from favourite_records where user_id = 1;`;
           db.query(countFavourites, (error, results4) => {
             if (error) {
               throw error;

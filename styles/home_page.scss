@@ -1,4 +1,3 @@
-
 .page {
   background-color: lightgrey;
 }
@@ -14,7 +13,7 @@
 }
 
 .main-img {
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .main-img:hover {
@@ -24,19 +23,27 @@
 .record-home {
   display: flex;
   flex-direction: column;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.views {
+  font-family: "Caveat", cursive;
 }
 
 .desc-text {
   width: 500px;
   height: auto;
+  font-family: "Kalam", cursive;
 }
 
 .price-record_day {
   padding-left: 10px;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 .artist {
   padding-left: 10px;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 .title-record_day {
@@ -56,7 +63,7 @@ img.record_main {
   border-bottom: black;
 }
 
-.favourite_img{
+.favourite_img {
   border-radius: 0.25rem !important;
   width: 200px;
   height: 200px;
@@ -91,7 +98,7 @@ img.record_main {
 }
 
 .record-day {
-  display:flex;
+  display: flex;
   flex-direction: column;
 }
 
@@ -111,6 +118,7 @@ img.record_main {
   align-content: flex-start;
   padding-top: 25px;
   font-weight: bold;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 div.favourites {
@@ -124,8 +132,8 @@ div.favourites {
 
 .container {
   display: flex;
-    align-items: flex-start;
-    flex-direction: column;
+  align-items: flex-start;
+  flex-direction: column;
 }
 
 .fav-display {
@@ -140,7 +148,7 @@ div.favourites {
 }
 
 .fav-img {
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .fav-img:hover {
@@ -150,12 +158,13 @@ div.favourites {
 .fav-title {
   width: 200px;
   text-overflow: ellipsis;
+  font-family: "Amatic SC", cursive;
 }
 
 .fav-link {
   text-decoration: none;
   color: black;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .fav-link:hover {
@@ -175,4 +184,3 @@ footer {
   align-items: flex-end;
   width: 100%;
 }
-
