@@ -50,6 +50,7 @@ main {
 }
 
 .title-record_day {
+  padding-top: 10px;
   padding-left: 5px;
   font-family: "Josefin Sans", sans-serif;
   font-weight: bold;
@@ -65,7 +66,6 @@ img.record_main {
   align-items: center;
   justify-content: center;
   align-content: center;
-  border-bottom: black;
 }
 
 .favourite_img {
@@ -162,6 +162,7 @@ div.favourites {
 }
 
 .fav-title {
+  padding-top: 5px;
   width: 200px;
   text-overflow: ellipsis;
   font-family: "Josefin Sans", sans-serif;
@@ -187,4 +188,5 @@ footer {
   display: flex;
   justify-content: space-between;
   padding-top: 1em;
+  background-color: lightgrey;
 }

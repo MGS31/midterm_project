@@ -26,7 +26,7 @@
   <%- include('partials/_header') %>
 
   <div class="white-card" style="margin: 1.25rem 1.25rem 0 1.25rem;">
-    <h1 style="padding:0; margin:0;">🔎 Advanced Search</h1>
+    <h1 class="title-adv" style="padding:0; margin:0;">🔎 Advanced Search</h1>
   </div>
 
     <div id="two-column-wrapper">
@@ -34,7 +34,7 @@
       <div class="two-column-layout-30">
         <div class="white-card">
 
-          <h3>Filters</h3>
+          <h3 class="filter">Filters</h3>
           <form action="/api/records/search" method="get">
 
             <label for="title" class="form-label">Title</label>
@@ -78,7 +78,7 @@
           <% } %>
 
           <div class="white-card">
-            <h3>Records (<%= records.length %>)</h3>
+            <h3 class="records">Records (<%= records.length %>)</h3>
 
             <div class="records-cards">
             <% if(records.length > 0) { %>

@@ -30,7 +30,7 @@
     <main>
       <section class="favourites">
         <% for(let count of countFavourites) { %>
-        <h2>Favourites (<%= count.count %>)</h2>
+        <h2 class="favs">Favourites (<%= count.count %>)</h2>
         <% } %> <% for(let favourite of favourites) { %>
         <div class="Favouritestile">
           <img src="<%= favourite.img_url %>" alt="" class="record-img" />
@@ -52,7 +52,7 @@
       </section>
       <section class="myListings">
         <% for(let count of countListings) { %>
-        <h2>My Listings (<%= count.count %>)</h2>
+        <h2 class="list">My Listings (<%= count.count %>)</h2>
         <% } %> <% for(let record of records) { %>
         <div class="Listingtile">
           <img src="<%= record.img_url %>" alt="" class="record-img" />

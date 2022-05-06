@@ -17,6 +17,10 @@ nav {
   font-family: "Koulen", cursive;
   color: white;
   margin-right: 1em;
+      display: flex;
+    align-items: center;
+    padding-right: 20px;
+    font-size: x-large;
 }
 
 .search-bar {
@@ -50,4 +54,8 @@ nav {
 .button:hover {
   color: maroon;
   background-color: white;
+}
+
+a {
+  font-family: "Josefin Sans", sans-serif;
 }
