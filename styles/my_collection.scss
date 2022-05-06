@@ -57,8 +57,20 @@ p {
   padding-left: 1em;
 }
 
-.tile button {
-  width: 3%;
+button {
+  cursor: pointer;
+  transition: all 0.25s ease;
+  color: black;
+  border: 1px solid darkgray;
+  text-align: center;
+  background-color: transparent;
+  outline: none;
+  border-radius: 4px;
+}
+
+button:hover {
+  color: white;
+  background-color: maroon;
 }
 
 .tile {
@@ -66,16 +78,8 @@ p {
   flex-direction: column;
 }
 
-button .sold {
-  width: 25%;
-}
-
 .sold {
-  background-color: red;
-}
-
-.favourited {
-  background-color: orange;
+  background-color: #fb5607;
 }
 
 footer {

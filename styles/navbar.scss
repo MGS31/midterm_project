@@ -35,3 +35,19 @@ nav {
 .nav-link:hover {
   color: lightgray;
 }
+
+.button {
+  cursor: pointer;
+  transition: all 0.25s ease;
+  color: white;
+  border: 1px solid lightgray;
+  text-align: center;
+  background-color: transparent;
+  outline: none;
+  border-radius: 4px;
+}
+
+.button:hover {
+  color: maroon;
+  background-color: white;
+}
