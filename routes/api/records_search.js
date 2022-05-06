@@ -3,7 +3,7 @@ const router = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    
+
     let title = req.query.title;
     let artist = req.query.artist;
     let minPrice = req.query.minPrice;
@@ -51,7 +51,7 @@ module.exports = (db) => {
 
     // query modification to search by min and max price
     if (minPrice && maxPrice) {
-      queryParams.push(minPrice * 100, maxPrice * 100); // *100 to convert from dollars to cents
+      queryParams.push(minPrice, maxPrice); // *100 to convert from dollars to cents
       appliedFilters.push('Price');
       if (queryParams.length === 2) { //checks if more than 1 WHERE clauses is needed, to see if AND is required
         queryString += `WHERE price >= $${queryParams.length - 1} AND price <= $${queryParams.length} `;
@@ -59,7 +59,7 @@ module.exports = (db) => {
         queryString += `AND price >= $${queryParams.length - 1} AND price <= $${queryParams.length} `;
       }
     }
-    
+
     // query modification to search by genre
     if (genre) {
       queryParams.push(`%${genre}%`);
@@ -97,7 +97,7 @@ module.exports = (db) => {
         };
 
         res.render("advanced_search_results", templateVars);
-        
+
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });

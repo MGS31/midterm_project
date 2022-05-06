@@ -1,0 +1,118 @@
+body {
+  background-color: lightgrey;
+  padding: 0;
+  margin: 0;
+}
+
+footer {
+  margin: 50px 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+h1 {
+  margin: 1rem;
+}
+
+h6 {
+  margin: 0;
+}
+
+p {
+  font-size: 0.75rem;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+#two-column-wrapper {
+  display: flex;
+  padding: 0.5rem;
+}
+
+.applied-filters-chip {
+  display: inline-block;
+  justify-content: center;
+  background-color: #609ffe3e;
+  font-size: 0.75rem;
+  margin: 0.25rem 0.25rem 0.25rem 0;
+  padding: 0.5rem;
+  border-radius: 25px;
+}
+
+.record-sold {
+  display: inline-block;
+  justify-content: center;
+  background-color: #80000035;
+  margin: 0.25rem 0.25rem 0.25rem 0;
+  padding: 0.5rem;
+  border-radius: 25px;
+  font-size: 12px;
+}
+
+.record-available {
+  display: inline-block;
+  justify-content: center;
+  background-color: #609ffe3e;
+  margin: 0.25rem 0.25rem 0.25rem 0;
+  padding: 0.5rem;
+  border-radius: 25px;
+  font-size: 12px;
+}
+
+.applied-filters {
+  margin-bottom: 1rem;
+}
+
+.clear-filters {
+  margin-top: 0.5rem;
+}
+
+.two-column-layout-30 {
+  width: 35%;
+  margin: 1rem;
+}
+
+.white-card {
+  background: white;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.card {
+  margin: 0.5rem;
+}
+
+.card-body {
+  padding: 0.5rem;
+}
+
+.two-column-layout-70 {
+  width: 65%;
+  margin: 1rem;
+}
+
+.records-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.filter-button {
+  margin: 0.5rem 0;
+  width: 100%;
+}
+
+// bootstrap overides
+
+.form-label {
+  margin: 0.25rem 0;
+}

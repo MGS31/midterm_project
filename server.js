@@ -8,11 +8,9 @@ const express = require("express");
 const app = express();
 const morgan = require("morgan");
 
-
 // *** for authentication feature ***
-const cookieParser = require('cookie-parser');
+const cookieParser = require("cookie-parser");
 // *** for authentication feature ***
-
 
 // PG database client/connection setup
 const { Pool } = require("pg");
@@ -75,7 +73,6 @@ app.use("/api/mycollection", myCollectionAPIRoutes(db));
 app.use("/api/myturntable", myTurntableAPIRoutes(db));
 app.use("/api/home", myHomePageAPIRoutes(db));
 app.use("/api/sell", sellARecordAPIRoutes(db));
-
 
 // *** for ADVANCED SEARCH feature ***
 app.use("/api/records/search", advancedSearchAPI(db));

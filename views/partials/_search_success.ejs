@@ -1,18 +1,19 @@
 <% for (const record of records) { %>
-  <div style="outline: 2px solid black;">
-    <img src="<%= record.img_url %>" alt="record image" width="50" height="50">
-    <a href="/records/<%=record.id%>"><h4><%= record.title %></h4></a>
-    <h4><%= record.artist_name %></h4>
-    <h4>$<%= record.price %></h4>
-    <h4><%= record.listing_views %></h4>
-    
-    <% if (record.sold === false) { %>
-    <h4 class="record-available">Available</h4>
-    <% } %>
 
-    <% if (record.sold === true) { %>
-      <h4 class="record-sold">Sold</h4>
-      <% } %>
+  <div class="card" style="width: 30%;">
+    <img src="<%= record.img_url %>" class="card-img-top" alt="image of record">
+    <div class="card-body">
+      <a href="/myturntable/<%=record.id%>"><h6 class="card-title"><%= record.title %></h6></a>
+      <p class="card-text"><%= record.artist_name %></p>
+      <p class="card-text">$<%= record.price %>.00</p>
+      <% if (record.sold === false) { %>
+        <p class="record-available">Available</p>
+        <% } %>
 
+        <% if (record.sold === true) { %>
+          <p class="record-sold">Sold</p>
+          <% } %>
+    </div>
   </div>
+
 <% } %>
