@@ -6,3 +6,4 @@ INSERT INTO record_images (record_id, img_url) VALUES ('5', 'https://m.media-ama
 INSERT INTO record_images (record_id, img_url) VALUES ('6', 'https://f4.bcbits.com/img/a1025522302_5.jpg');
 INSERT INTO record_images (record_id, img_url) VALUES ('7', 'https://i.scdn.co/image/ab67616d0000b2736b9afebbb0db6938d5170a4c');
 INSERT INTO record_images (record_id, img_url) VALUES ('8', 'https://m.media-amazon.com/images/I/91OeYnLoCJL._AC_SL1500_.jpg');
+INSERT INTO record_images (record_id, img_url) VALUES ('9', 'https://merchbar.imgix.net/product/4/1616/33394916/ZB7JN8-1544573419-1280x1280-1544573413-paramore.jpg.jpg?auto=format&fit=max&w=1920');
