@@ -129,3 +129,37 @@ a {
 .white-card {
   font-family: "Josefin Sans", sans-serif;
 }
+
+.btn-primary {
+  transition: all 0.25s ease;
+  color: black;
+  border: 1px solid darkgray;
+  text-align: center;
+  background-color: transparent;
+  outline: none;
+  border-radius: 4px;
+  height: 36px;
+}
+
+.btn-primary:hover {
+  color: white;
+  background-color: maroon;
+  border: 1px solid darkgray;
+}
+
+.btn-outline-primary {
+  transition: all 0.25s ease;
+  color: black;
+  border: 1px solid darkgray;
+  text-align: center;
+  background-color: transparent;
+  outline: none;
+  border-radius: 4px;
+  height: 36px;
+}
+
+.btn-outline-primary:hover {
+  color: white;
+  background-color: maroon;
+  border: 1px solid darkgray;
+}
