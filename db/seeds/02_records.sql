@@ -9,7 +9,7 @@ VALUES ('Jet Blue', '15', 'Alternative', 'THREE1989', 'Favourite thing to come o
 INSERT INTO records (title, price, genre, artist_name, description, sold, listing_views, seller_id)
 VALUES ('Where U Are', '9', 'Alternative', 'Throttle', 'It is both chill and gets you bumping!',false, 3, 1);
 INSERT INTO records (title, price, genre, artist_name, description, sold, listing_views, seller_id)
-VALUES ('Celeste', '12', 'Jazz', 'Psalm Trees', 'Favourite thing to relax to, honestly a must have!',false, 10, 1);
+VALUES ('Celeste', '12', 'Jazz', 'Psalm Trees', 'Céleste is heaven. A voice that brightens the stars. A mystic who brings the rain. UK producer Psalm Trees and French guitarist Guillame Muschalle have created a four song EP lost between landscape and dream. The drowsy jazzhop project feels like a nighttime panorama, like finding a seaside diary. A rainstorm on your favorite empty beach. Céleste is heaven, wherever you want to be.',false, 10, 1);
 INSERT INTO records (title, price, genre, artist_name, description, sold, listing_views, seller_id)
 VALUES ('Bump This', '3', 'Alternative', 'Danny Gonzalez', 'Great music and always makes me laugh',false, 5, 8);
 INSERT INTO records (title, price, genre, artist_name, description, sold, listing_views, seller_id)
