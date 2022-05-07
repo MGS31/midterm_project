@@ -17,10 +17,10 @@ nav {
   font-family: "Koulen", cursive;
   color: white;
   margin-right: 1em;
-      display: flex;
-    align-items: center;
-    padding-right: 20px;
-    font-size: x-large;
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
+  font-size: x-large;
 }
 
 .search-bar {
@@ -29,6 +29,7 @@ nav {
 
 #title {
   margin-right: 1em;
+  height: 36px;
 }
 
 .nav-link {
@@ -49,6 +50,7 @@ nav {
   background-color: transparent;
   outline: none;
   border-radius: 4px;
+  height: 36px;
 }
 
 .button:hover {

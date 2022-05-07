@@ -11,6 +11,14 @@ main {
 #myCollection {
   margin: 1.1em;
   font-family: "Josefin Sans", sans-serif;
+  background: white;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+  padding: 1rem;
+  border: 2px solid black;
 }
 
 .favs {
@@ -22,7 +30,8 @@ main {
   display: flex;
   flex-direction: column;
   width: 50%;
-  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: auto;
   max-height: 100vh;
   padding: 3em;
 }
@@ -36,6 +45,11 @@ main {
   align-content: center;
   align-items: center;
   background-color: white;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
 }
 
 .list {
@@ -49,8 +63,7 @@ main {
   width: 100%;
 }
 
-.recordInfo h3,
-p {
+.recordInfo p {
   margin: 0;
   padding: 0;
   font-family: "Josefin Sans", sans-serif;

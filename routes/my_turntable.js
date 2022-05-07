@@ -48,6 +48,5 @@ module.exports = (db) => {
       res.redirect(`/myturntable/${recordID}`);
     });
   });
-  /* console.log(router); */
   return router;
 };

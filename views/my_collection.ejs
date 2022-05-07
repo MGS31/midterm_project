@@ -35,7 +35,9 @@
         <div class="Favouritestile">
           <img src="<%= favourite.img_url %>" alt="" class="record-img" />
           <div class="recordInfo">
-            <h3>Record title: <%= favourite.title %></h3>
+            <a href="http://localhost:8080/myturntable/<%= favourite.id %>"
+              >Record title: <%= favourite.title %></a
+            >
             <p>Artist: <%= favourite.artist_name %></p>
             <p>Price: <%= favourite.price %></p>
             <p>Views: <%= favourite.listing_views %></p>
@@ -57,7 +59,9 @@
         <div class="Listingtile">
           <img src="<%= record.img_url %>" alt="" class="record-img" />
           <div class="recordInfo">
-            <h3>Record title: <%= record.title %></h3>
+            <a href="http://localhost:8080/myturntable/<%= record.id %>"
+              >Record title: <%= record.title %></a
+            >
             <p>Artist: <%= record.artist_name %></p>
             <p>Price: <%= record.price %></p>
             <p>Views: <%= record.listing_views %></p>
@@ -81,20 +85,5 @@
       <a href="#">Contact Us</a>
       <a href="#">Terms Of Use</a>
     </footer>
-    <script>
-      $(".soldButton").on("click", function () {
-        $(this).addClass("sold");
-        localStorage.className = "sold";
-      });
-      $(document).ready(function () {
-        SetClass();
-        $(".favourite").on("click", function () {
-          $(this).toggleClass("favourited");
-        });
-      });
-      const SetClass = function () {
-        $(".soldButton").addClass(localStorage.className);
-      };
-    </script>
   </body>
 </html>

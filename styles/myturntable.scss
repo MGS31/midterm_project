@@ -11,9 +11,10 @@ main {
 .record {
   padding-bottom: 2em;
   padding-left: 2em;
-  border-bottom: 2px solid darkgray;
+  border-bottom: 2px dotted darkgray;
   font-family: "Josefin Sans", sans-serif;
   padding-top: 10px;
+  padding-left: 200px;
 }
 
 .recordTitle {
@@ -55,11 +56,28 @@ main {
   transform: scale(1.1);
 }
 
+.record-available {
+  background-color: #609ffe3e;
+  margin: 0.25rem 0.25rem 0.25rem 0;
+  padding: 0.5rem;
+  border-radius: 25px;
+  font-size: 12px;
+}
+
+.record-sold {
+  background-color: #80000035;
+  margin: 0.25rem 0.25rem 0.25rem 0;
+  padding: 0.5rem;
+  border-radius: 25px;
+  font-size: 12px;
+}
+
 .comments {
   display: flex;
   flex-direction: column;
   padding-left: 2em;
   font-family: "Josefin Sans", sans-serif;
+  padding-left: 200px;
 }
 
 .userComment {
@@ -67,8 +85,14 @@ main {
   flex-direction: column;
   border-bottom: 5px solid black;
   margin-bottom: 3em;
+  padding: 1em;
   background-color: white;
-  width: 100vh;
+  width: 75vh;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
 }
 
 .userComment p {
@@ -88,11 +112,11 @@ main {
 }
 
 .comments input {
-  width: 25%;
+  width: 75vh;
+  height: 36px;
 }
 
 .comments button {
-  cursor: pointer;
   transition: all 0.25s ease;
   color: black;
   border: 1px solid darkgray;
@@ -101,6 +125,7 @@ main {
   outline: none;
   border-radius: 4px;
   width: 5%;
+  height: 36px;
 }
 
 .comments button:hover {
